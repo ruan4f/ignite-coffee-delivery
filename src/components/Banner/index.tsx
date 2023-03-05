@@ -1,3 +1,5 @@
+import { BannerContainer } from './styles'
+
 export function Banner() {
-  return <div>Banner</div>
+  return <BannerContainer>Banner</BannerContainer>
 }
