@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
 export const BannerContainer = styled.div`
+  width: 100%;
+  height: 34rem;
   display: flex;
   align-items: center;
-  padding: 0 7.5rem;
+  background-image: url('/background.svg');
 `
