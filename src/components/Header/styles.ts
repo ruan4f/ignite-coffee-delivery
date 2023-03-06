@@ -9,21 +9,29 @@ export const HeaderContainer = styled.header`
   nav {
     display: flex;
     gap: 0.5rem;
+
+    a {
+      text-decoration: none;
+    }
   }
 `
 
 export const CartLocation = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
+  justify-content: space-evenly;
+  gap: 0.25rem;
   background-color: ${(props) => props.theme['purple-light']};
   border-radius: 6px;
   height: 2rem;
   padding: 0.5rem;
-  color: ${(props) => props.theme['purple-dark']};
+  color: ${(props) => props.theme.purple};
   font-size: 0.825rem;
   line-height: 130%;
+
+  span {
+    color: ${(props) => props.theme['purple-dark']};
+  }
 `
 
 export const CartLink = styled.div`

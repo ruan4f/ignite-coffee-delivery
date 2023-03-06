@@ -7,6 +7,7 @@ export const CoffeeListContainer = styled.div`
   padding: 0 7.5rem;
 `
 export const CoffeeListTitle = styled.h1`
+  padding-top: 2rem;
   font-family: 'Baloo 2', sans-serif;
   font-style: normal;
   font-weight: 800;

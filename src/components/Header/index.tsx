@@ -13,13 +13,13 @@ export function Header() {
       <nav>
         <NavLink to="/" title="Home">
           <CartLocation>
-            <MapPin size={20} />
-            Porto Alegre
+            <MapPin size={20} weight="fill" />
+            <span>Porto Alegre, RS</span>
           </CartLocation>
         </NavLink>
         <NavLink to="/checkout" title="Checkout">
           <CartLink>
-            <ShoppingCart size={20} />
+            <ShoppingCart size={20} weight="fill" />
           </CartLink>
         </NavLink>
       </nav>
