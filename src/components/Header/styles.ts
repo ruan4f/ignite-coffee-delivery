@@ -23,7 +23,7 @@ export const CartLocation = styled.div`
   gap: 0.25rem;
   background-color: ${(props) => props.theme['purple-light']};
   border-radius: 6px;
-  height: 2rem;
+  height: 2.375rem;
   padding: 0.5rem;
   color: ${(props) => props.theme.purple};
   font-size: 0.825rem;
@@ -31,6 +31,10 @@ export const CartLocation = styled.div`
 
   span {
     color: ${(props) => props.theme['purple-dark']};
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.875rem;
   }
 `
 
@@ -40,9 +44,9 @@ export const CartLink = styled.div`
   justify-content: center;
   background-color: ${(props) => props.theme['yellow-light']};
   border-radius: 6px;
-  width: 2rem;
-  height: 2rem;
-  padding: 8px;
+  width: 2.375rem;
+  height: 2.375rem;
+  padding: 0.5rem;
   color: ${(props) => props.theme['yellow-dark']};
   line-height: 130%;
 `
