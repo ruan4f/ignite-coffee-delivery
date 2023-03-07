@@ -31,9 +31,6 @@ export const CartLocation = styled.div`
 
   span {
     color: ${(props) => props.theme['purple-dark']};
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
     font-size: 0.875rem;
   }
 `

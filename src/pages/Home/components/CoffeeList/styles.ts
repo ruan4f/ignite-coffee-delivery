@@ -16,6 +16,7 @@ export const CoffeeListTitle = styled.h1`
 
   color: ${(props) => props.theme['base-subtitle']};
 `
+
 export const CoffeeListCards = styled.div`
   display: flex;
   padding-top: 3.5rem;
