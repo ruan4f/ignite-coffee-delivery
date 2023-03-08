@@ -4,7 +4,7 @@ export const CoffeeListContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0 7.5rem;
+  padding: 0 7.5rem 3rem 7.5rem;
 `
 export const CoffeeListTitle = styled.h1`
   padding-top: 2rem;
