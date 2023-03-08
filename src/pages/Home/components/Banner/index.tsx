@@ -1,6 +1,8 @@
 import {
   BannerContainer,
   BannerContent,
+  BannerContentOption,
+  BannerContentOptionSvg,
   BannerContentOptions,
   BannerContentSubTitle,
   BannerContentText,
@@ -25,23 +27,36 @@ export function Banner() {
           </BannerContentSubTitle>
 
           <BannerContentOptions>
-            <span>
-              <ShoppingCart size={32} weight="fill" />
-              Compra simples e segura
-            </span>
-            <span>
-              <Package size={32} weight="fill" />
-              Embalagem mantém o café intacto
-            </span>
-            <span>
-              <Timer size={32} weight="fill" />
-              Entrega rápida e rastreada
-            </span>
-            <span>
-              <Coffee size={32} weight="fill" />O café chega fresquinho até você
-            </span>
+            <BannerContentOption>
+              <BannerContentOptionSvg variant="yellow-dark">
+                <ShoppingCart size={24} weight="fill" />
+              </BannerContentOptionSvg>
+              <span>Compra simples e segura</span>
+            </BannerContentOption>
+
+            <BannerContentOption>
+              <BannerContentOptionSvg variant="base-text">
+                <Package size={24} weight="fill" />
+              </BannerContentOptionSvg>
+              <span>Embalagem mantém o café intacto</span>
+            </BannerContentOption>
+
+            <BannerContentOption>
+              <BannerContentOptionSvg variant="yellow">
+                <Timer size={24} weight="fill" />
+              </BannerContentOptionSvg>
+              <span>Entrega rápida e rastreada</span>
+            </BannerContentOption>
+
+            <BannerContentOption>
+              <BannerContentOptionSvg variant="purple">
+                <Coffee size={24} weight="fill" />
+              </BannerContentOptionSvg>
+              <span>O café chega fresquinho até você</span>
+            </BannerContentOption>
           </BannerContentOptions>
         </BannerContentText>
+
         <div>
           <img
             src={coffeeImage}
