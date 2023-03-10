@@ -16,20 +16,19 @@ export const SuccessContentText = styled.div`
 
 export const OrderInfo = styled.div`
   /* Order info */
+  border: 1px solid black;
   box-sizing: border-box;
 
   /* Auto layout */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 40px;
-  gap: 32px;
+  padding: 2.5rem;
+  gap: 2rem;
 
   position: absolute;
   width: 526px;
   height: 270px;
-  left: calc(50% - 526px / 2 - 297px);
-  top: 296px;
 
   border-radius: 6px 36px;
 `
