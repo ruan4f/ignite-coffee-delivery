@@ -1,51 +1,83 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const HeaderContainer = styled.header`
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 5;
   width: 100%;
-  max-width: 90rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2rem 7.5rem;
+  height: 6.5rem;
+  background: ${({ theme }) => theme.colors['base-background']};
 
-  nav {
-    display: flex;
-    gap: 0.5rem;
-
-    a {
-      text-decoration: none;
-    }
-  }
-`
-
-export const CartLocation = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 0.25rem;
-  background-color: ${(props) => props.theme['purple-light']};
-  border-radius: 6px;
-  height: 2.375rem;
-  padding: 0.5rem;
-  color: ${(props) => props.theme.purple};
-  font-size: 0.825rem;
-  line-height: 130%;
-
-  span {
-    color: ${(props) => props.theme['purple-dark']};
-    font-size: 0.875rem;
-  }
-`
-
-export const CartLink = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${(props) => props.theme['yellow-light']};
+
+  > div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+`
+
+export const HeaderButtonsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+`
+
+interface HeaderButtonProps {
+  variant: 'purple' | 'yellow'
+}
+
+export const HeaderButton = styled.button<HeaderButtonProps>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+
+  min-width: 2.3rem;
+  height: 2.3rem;
   border-radius: 6px;
-  width: 2.375rem;
-  height: 2.375rem;
-  padding: 0.5rem;
-  color: ${(props) => props.theme['yellow-dark']};
-  line-height: 130%;
+  border: none;
+  padding: 0 0.5rem;
+  position: relative;
+  cursor: inherit;
+
+  font-size: ${({ theme }) => theme.textSizes['text-regular-s']};
+
+  span {
+    position: absolute;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    top: calc(-1.25rem / 2);
+    right: calc(-1.25rem / 2);
+
+    color: ${({ theme }) => theme.colors['base-white']};
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  ${({ variant, theme }) => css`
+    background: ${theme.colors[`brand-${variant}-light`]};
+    color: ${theme.colors[`brand-${variant}-dark`]};
+
+    span {
+      background: ${theme.colors[`brand-${variant}-dark`]};
+    }
+  `}
+
+  ${({ variant, theme }) =>
+    variant === 'purple' &&
+    css`
+      svg {
+        color: ${theme.colors[`brand-purple`]};
+      }
+    `}
 `

@@ -1,30 +1,86 @@
 import { ShoppingCart } from 'phosphor-react'
+import { useState } from 'react'
+import { QuantityInput } from '../../../../components/QuantityInput'
+import { RegularText, TitleText } from '../../../../components/Typography'
+import { useCart } from '../../../../hooks/useCart'
+import { formatMoney } from '../../../../utils/formatMoney'
 import {
+  AddCartWrapper,
+  CardFooter,
   CoffeeCardContainer,
-  CoffeeCardContent,
-  CoffeeCardOption,
+  Description,
+  Name,
+  Tags,
 } from './styles'
 
-export function CoffeeCard() {
+export interface Coffee {
+  id: number
+  tags: string[]
+  name: string
+  description: string
+  photo: string
+  price: number
+}
+
+interface CoffeeProps {
+  coffee: Coffee
+}
+
+export function CoffeeCard({ coffee }: CoffeeProps) {
+  const { addCoffeeToCart } = useCart()
+
+  const [quantity, setQuantity] = useState(1)
+
+  function handleIncrease() {
+    setQuantity((oldQuantity) => oldQuantity + 1)
+  }
+
+  function handleDecrease() {
+    setQuantity((oldQuantity) => oldQuantity - 1)
+  }
+
+  function handleAddToCart() {
+    const coffeeToAdd = {
+      ...coffee,
+      quantity,
+    }
+
+    addCoffeeToCart(coffeeToAdd)
+  }
+
+  const formattedPrice = formatMoney(coffee.price)
+
   return (
     <CoffeeCardContainer>
-      <CoffeeCardContent>
-        <img src="/coffees/coffee-expresso.png" alt="" />
-        <span>Tradicional</span>
-      </CoffeeCardContent>
-      <CoffeeCardContent>
-        <h1>Expresso Tradicional</h1>
-        <span>O tradicional café feito com água quente e grãos moídos</span>
-      </CoffeeCardContent>
-      <CoffeeCardOption>
-        <span>R$ 9,90</span>
+      <img src={`/coffees/${coffee.photo}`} alt="" />
+      <Tags>
+        {coffee.tags.map((tag) => (
+          <span key={`${coffee.id}${tag}`}>{tag}</span>
+        ))}
+      </Tags>
+
+      <Name>{coffee.name}</Name>
+      <Description>{coffee.description}</Description>
+
+      <CardFooter>
         <div>
-          <button>-</button>
-          <span>1</span>
-          <button>+</button>
+          <RegularText size="s">R$</RegularText>
+          <TitleText size="m" color="text" as="strong">
+            {formattedPrice}
+          </TitleText>
         </div>
-        <ShoppingCart size={28} weight="fill" />
-      </CoffeeCardOption>
+
+        <AddCartWrapper>
+          <QuantityInput
+            onIncrease={handleIncrease}
+            onDecrease={handleDecrease}
+            quantity={quantity}
+          />
+          <button onClick={handleAddToCart}>
+            <ShoppingCart weight="fill" size={22} />
+          </button>
+        </AddCartWrapper>
+      </CardFooter>
     </CoffeeCardContainer>
   )
 }
