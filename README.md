@@ -31,11 +31,6 @@ _<h3>Página de Sucesso</h3>_
 <br>
 
 - ✔️ Fiz o website ser `responsivo`
-- ✔️ Adicionei um `tema escuro`
-- ✔️ Coloquei `auto complete da cidade e do UF` baseado no CEP
-- ✔️ Desenvolvi uma página para ver o `histórico de pedidos`
-- ✔️ Adicionei `mensagens` para notificar o usuário
-- ✔️ Desenvolvi uma `validação do formulário` em tempo real
 
 <br>
 
