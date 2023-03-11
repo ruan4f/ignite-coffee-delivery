@@ -26,16 +26,6 @@ _<h3>Página de Sucesso</h3>_
 
 ---
 
-<h2>Fui além do desafio! 🚀</h2>
-
-<br>
-
-- ✔️ Fiz o website ser `responsivo`
-
-<br>
-
----
-
 <h2>Mas, o que eu aprendi? 🤔</h2>
 
 <br>
